@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Washington DC Trip — June 25–29, 2026</title>
+  <style>
+    :root {
+      --coral: #FF6B6B;
+      --coral-light: #FF8E8E;
+      --teal: #00B4D8;
+      --teal-dark: #0096B7;
+      --mint: #2EC4B6;
+      --golden: #FFB347;
+      --golden-dark: #E09A30;
+      --lavender: #9B5DE5;
+      --sunny: #FFD166;
+      --peach: #FFECD2;
+      --sky: #E0F7FA;
+      --blush: #FFE0E6;
+      --lime: #E8F5E9;
+      --bg: #FFF5EB;
+      --card: #FFFFFF;
+      --text: #2D3436;
+      --muted: #636E72;
+      --border: #E8E8E8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    a { color: var(--teal-dark); text-decoration: none; font-weight: 600; }
+    a:hover { color: var(--coral); text-decoration: underline; }
+    ul { padding-left: 1.4em; }
+    li { margin: 4px 0; }
+
+    .hero {
+      background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 25%, #FFD166 50%, #2EC4B6 75%, #00B4D8 100%);
+      color: #fff;
+      text-align: center;
+      padding: 60px 24px 50px;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, var(--bg));
+    }
+    .hero-icon { font-size: 3.2rem; margin-bottom: 10px; }
+    .hero h1 { font-size: 2.4rem; font-weight: 800; text-shadow: 1px 2px 8px rgba(0,0,0,0.25); margin-bottom: 6px; }
+    .hero-sub { font-size: 1.1rem; opacity: 0.95; margin-bottom: 4px; }
+    .hero-dates { font-size: 1.25rem; font-weight: 700; color: #FFF9E6; margin: 10px 0 16px; text-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+    .hero-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+    .chip { background: rgba(255,255,255,0.22); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; padding: 5px 14px; font-size: 0.82rem; font-weight: 600; }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin: 24px auto 0;
+      max-width: 960px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .toc-title { font-weight: 700; color: var(--text); margin-bottom: 10px; font-size: 1rem; }
+    .toc-links { display: flex; flex-wrap: wrap; gap: 7px; }
+    .toc-links a {
+      background: #FFF0E0;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 13px;
+      border-radius: 16px;
+      border: 1px solid #FFD9B3;
+      transition: all 0.15s;
+    }
+    .toc-links a:hover { background: var(--coral); color: #fff; border-color: var(--coral); text-decoration: none; }
+
+    .section { padding: 36px 0 30px; border-bottom: 1px solid var(--border); }
+    .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+    .section-icon { font-size: 1.5rem; }
+    .section-title { font-size: 1.5rem; font-weight: 700; color: var(--text); }
+
+    .stats-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      background: linear-gradient(135deg, #FF6B6B, #FF8E53, #FFD166);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    .stat-item { flex: 1; min-width: 130px; padding: 14px 16px; border-right: 1px solid rgba(255,255,255,0.2); }
+    .stat-item:last-child { border-right: none; }
+    .stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.75); margin-bottom: 3px; font-weight: 600; }
+    .stat-value { font-size: 0.95rem; font-weight: 700; color: #fff; }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+      padding: 18px 20px;
+    }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 680px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.8rem; }
+      .stats-bar { flex-direction: column; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+    }
+
+    .alert { border-radius: 10px; padding: 16px 18px; margin: 12px 0; font-size: 0.92rem; }
+    .alert strong { display: block; margin-bottom: 5px; font-size: 0.98rem; }
+    .alert-info { background: #E0F2FE; border-left: 4px solid var(--teal); }
+    .alert-tip { background: #FFF8E1; border-left: 4px solid var(--golden); }
+    .alert-success { background: #E8F5E9; border-left: 4px solid var(--mint); }
+    .alert-heat { background: linear-gradient(135deg, #FF6B6B15, #FF8E5315); border-left: 4px solid var(--coral); }
+
+    .flight-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 18px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      border-top: 4px solid var(--teal);
+    }
+    .flight-route { display: flex; align-items: center; gap: 12px; margin: 10px 0; flex-wrap: wrap; }
+    .flight-city { font-weight: 700; font-size: 1.1rem; }
+    .flight-time { font-family: 'Courier New', monospace; font-size: 1.3rem; font-weight: 700; color: var(--coral); }
+    .flight-arrow { font-size: 1.4rem; color: var(--muted); }
+    .flight-detail { font-size: 0.85rem; color: var(--muted); margin: 2px 0; }
+    .flight-ref { display: inline-block; background: #FFF0E0; color: var(--golden-dark); font-weight: 700; padding: 2px 10px; border-radius: 6px; font-size: 0.85rem; margin-top: 4px; }
+
+    .accom-card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 20px 22px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      border-top: 4px solid var(--mint);
+    }
+    .accom-card h3 { color: var(--text); margin-bottom: 8px; }
+    .accom-detail { font-size: 0.9rem; color: var(--muted); margin: 3px 0; }
+    .accom-detail strong { color: var(--text); }
+
+    .weather-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 14px 0; }
+    .weather-day {
+      background: var(--card);
+      border-radius: 10px;
+      padding: 14px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .weather-date { font-weight: 700; font-size: 0.85rem; color: var(--muted); margin-bottom: 4px; }
+    .weather-icon { font-size: 2rem; margin: 4px 0; }
+    .weather-temp { font-weight: 700; font-size: 1.1rem; color: var(--coral); }
+    .weather-low { font-size: 0.85rem; color: var(--muted); }
+
+    .event-card {
+      background: var(--card);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 10px 0;
+      border-left: 4px solid var(--sunny);
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    }
+    .event-card h4 { color: var(--text); margin-bottom: 4px; font-size: 1rem; }
+    .event-card .event-dates { font-size: 0.82rem; color: var(--coral); font-weight: 600; margin-bottom: 4px; }
+    .event-card p { font-size: 0.9rem; color: var(--muted); }
+
+    .metro-card {
+      background: linear-gradient(135deg, #003DA5, #0057B8);
+      color: #fff;
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .metro-card h3 { color: var(--sunny); margin-bottom: 10px; }
+    .metro-card li { color: rgba(255,255,255,0.9); margin: 6px 0; }
+    .metro-line { display: inline-block; padding: 2px 10px; border-radius: 10px; font-size: 0.78rem; font-weight: 700; margin: 2px; }
+    .ml-red { background: #BF0000; color: white; }
+    .ml-blue { background: #009CDE; color: white; }
+    .ml-yellow { background: #FFD100; color: #333; }
+    .ml-green { background: #00B251; color: white; }
+    .ml-orange { background: #F7941D; color: white; }
+    .ml-silver { background: #919D9D; color: white; }
+
+    .day-card {
+      background: var(--card);
+      border-radius: 14px;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.07);
+      margin: 22px 0;
+      overflow: hidden;
+    }
+    .day-head {
+      padding: 16px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: #fff;
+    }
+    .day-head-1 { background: linear-gradient(135deg, #FF6B6B, #FF8E53); }
+    .day-head-2 { background: linear-gradient(135deg, #00B4D8, #0096B7); }
+    .day-head-3 { background: linear-gradient(135deg, #2EC4B6, #1B9E8F); }
+    .day-head-4 { background: linear-gradient(135deg, #FFB347, #FF9A3C); }
+    .day-head-5 { background: linear-gradient(135deg, #9B5DE5, #7B3FC4); }
+    .day-label { font-size: 0.78rem; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+    .day-name { font-size: 1.15rem; font-weight: 700; }
+    .day-badge { background: rgba(255,255,255,0.25); color: #fff; padding: 4px 12px; border-radius: 14px; font-size: 0.78rem; font-weight: 700; backdrop-filter: blur(4px); }
+    .day-body { padding: 20px 22px; }
+
+    .activity { display: flex; gap: 14px; padding: 12px 14px; background: #FAFAFA; border-radius: 10px; margin: 10px 0; }
+    .act-time { font-weight: 700; color: var(--coral); min-width: 65px; font-family: 'Courier New', monospace; font-size: 0.88rem; padding-top: 2px; }
+    .act-body { flex: 1; }
+    .act-title { font-weight: 700; color: var(--text); margin-bottom: 3px; font-size: 1rem; }
+    .act-title a { color: var(--text); }
+    .act-title a:hover { color: var(--coral); }
+    .act-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+    .act-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; padding: 2px 9px; border-radius: 10px; margin: 4px 3px 0 0; }
+    .tag-free { background: #D1FAE5; color: #065F46; }
+    .tag-paid { background: #FEF3C7; color: #92400E; }
+    .tag-info { background: #DBEAFE; color: #1D4ED8; }
+    .tag-new { background: #FCE7F3; color: #9D174D; }
+    .tag-star { background: #FFF7ED; color: #C2410C; }
+
+    .meal-box {
+      background: linear-gradient(135deg, #FFF8F0, #FFF0E0);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 12px 0;
+      border-left: 4px solid var(--golden);
+    }
+    .meal-box h4 { color: var(--golden-dark); margin-bottom: 8px; font-size: 0.95rem; }
+    .meal-option { margin: 6px 0; font-size: 0.88rem; }
+    .meal-option strong { color: var(--text); }
+    .meal-option span { color: var(--muted); }
+
+    .map-table { width: 100%; border-collapse: collapse; margin: 14px 0 4px; font-size: 0.84rem; }
+    .map-table caption { text-align: left; font-weight: 700; color: var(--text); margin-bottom: 6px; font-size: 0.86rem; }
+    .map-table th { background: #FFF0E0; color: var(--text); padding: 7px 12px; text-align: left; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 700; }
+    .map-table td { padding: 7px 12px; border-bottom: 1px solid var(--border); color: var(--muted); }
+    .map-table td a { color: var(--coral); font-weight: 700; text-decoration: none; }
+    .map-table td a:hover { text-decoration: underline; }
+
+    .food-section-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 14px 0; }
+    .food-card {
+      background: var(--card);
+      border-radius: 10px;
+      padding: 14px 18px;
+      border-left: 4px solid var(--coral);
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    }
+    .food-card.brunch { border-left-color: var(--golden); }
+    .food-card.lunch { border-left-color: var(--teal); }
+    .food-card.dinner { border-left-color: var(--lavender); }
+    .food-card h4 { color: var(--text); margin-bottom: 2px; font-size: 0.95rem; }
+    .food-card .food-loc { font-size: 0.8rem; color: var(--muted); margin-bottom: 4px; }
+    .food-card .food-price { font-size: 0.8rem; color: var(--coral); font-weight: 600; margin-bottom: 4px; }
+    .food-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+
+    .fee-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.92rem; }
+    .fee-table th { background: linear-gradient(135deg, #FF6B6B, #FF8E53); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; }
+    .fee-table td { padding: 9px 14px; border-bottom: 1px solid var(--border); }
+    .fee-table tr:nth-child(even) td { background: #FFF8F0; }
+    .fee-free { color: #065F46; font-weight: 700; }
+    .fee-paid { color: var(--coral); font-weight: 700; }
+
+    .pack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 14px 0; }
+    .pack-card { background: var(--card); border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 6px rgba(0,0,0,0.05); }
+    .pack-card h4 { font-size: 0.9rem; color: var(--text); margin-bottom: 8px; border-bottom: 2px solid var(--sunny); padding-bottom: 5px; }
+    .pack-card li { font-size: 0.85rem; color: var(--muted); list-style: none; padding: 2px 0; }
+    .pack-card li::before { content: '✓ '; color: var(--mint); font-weight: 700; }
+
+    .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 14px 0; }
+    .link-card { background: var(--card); border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 6px rgba(0,0,0,0.05); }
+    .link-card h4 { font-size: 0.82rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; font-weight: 700; }
+    .link-card a { display: block; font-weight: 600; font-size: 0.88rem; margin: 4px 0; padding: 4px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: var(--teal-dark); }
+    .link-card a:last-child { border-bottom: none; }
+    .link-card a:hover { color: var(--coral); }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.82rem;
+      margin: 4px 3px 4px 0;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+    .btn:hover { opacity: 0.85; transform: translateY(-1px); text-decoration: none; }
+    .btn-coral { background: var(--coral); color: #fff; }
+    .btn-teal { background: var(--teal); color: #fff; }
+    .btn-outline { border: 2px solid var(--teal); color: var(--teal-dark); background: transparent; }
+
+    .footer {
+      background: linear-gradient(135deg, #2D3436, #636E72);
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+      padding: 30px 24px;
+      font-size: 0.85rem;
+    }
+    .footer a { color: var(--sunny); }
+
+    .back-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--coral);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 100;
+      text-decoration: none;
+      line-height: 44px;
+      text-align: center;
+    }
+    .back-top:hover { background: var(--coral-light); text-decoration: none; color: #fff; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-icon">🌸</div>
+  <h1>Washington, D.C.</h1>
+  <p class="hero-sub">Museums, waterfalls, world-class food, and panda bears — your capital city adventure.</p>
+  <div class="hero-dates">June 25 – 29, 2026</div>
+  <div class="hero-chips">
+    <span class="chip">🗓️ 5 Days / 4 Nights</span>
+    <span class="chip">🚇 Metro + Walk</span>
+    <span class="chip">🏛️ Most Museums FREE</span>
+    <span class="chip">🐼 Pandas Are Back</span>
+  </div>
+</div>
+
+<nav class="toc" id="top">
+  <div class="toc-title">Jump to a section</div>
+  <div class="toc-links">
+    <a href="#flights">✈️ Flights</a>
+    <a href="#stay">🏠 Stay</a>
+    <a href="#weather">🌤️ Weather</a>
+    <a href="#events">🎉 Events</a>
+    <a href="#getting-around">🚇 Getting Around</a>
+    <a href="#itinerary">📅 Itinerary</a>
+    <a href="#food-guide">🍽️ Restaurant Guide</a>
+    <a href="#fees">💵 Fees</a>
+    <a href="#packing">🎒 Packing</a>
+    <a href="#links">🔗 Links</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div style="padding: 24px 0 0;">
+    <div class="stats-bar">
+      <div class="stat-item"><div class="stat-label">Duration</div><div class="stat-value">5 Days / 4 Nights</div></div>
+      <div class="stat-item"><div class="stat-label">Getting Around</div><div class="stat-value">Metro + Walk + Car</div></div>
+      <div class="stat-item"><div class="stat-label">Museum Entry</div><div class="stat-value">Mostly FREE</div></div>
+      <div class="stat-item"><div class="stat-label">Home Base</div><div class="stat-value">H Street NE</div></div>
+    </div>
+  </div>
+
+  <!-- FLIGHTS -->
+  <div class="section" id="flights">
+    <div class="section-header">
+      <span class="section-icon">✈️</span>
+      <h2 class="section-title">Flights</h2>
+    </div>
+    <div class="grid-2">
+      <div class="flight-card">
+        <h3 style="margin-bottom:8px;">Outbound — Thu, June 25</h3>
+        <div class="flight-route">
+          <div>
+            <div class="flight-city">Toronto YTZ</div>
+            <div class="flight-time">15:15</div>
+            <div class="flight-detail">Billy Bishop Toronto City Airport</div>
+          </div>
+          <div class="flight-arrow">✈️ →</div>
+          <div>
+            <div class="flight-city">Washington IAD</div>
+            <div class="flight-time">16:38</div>
+            <div class="flight-detail">Washington Dulles International Airport</div>
+          </div>
+        </div>
+        <div class="flight-detail">AC 8540 · Air Canada Express – Jazz</div>
+        <div class="flight-detail">De Havilland Dash 8-400 · Economy (G) · 1hr 23m</div>
+      </div>
+      <div class="flight-card">
+        <h3 style="margin-bottom:8px;">Return — Mon, June 29</h3>
+        <div class="flight-route">
+          <div>
+            <div class="flight-city">Washington IAD</div>
+            <div class="flight-time">22:14</div>
+            <div class="flight-detail">Washington Dulles International Airport</div>
+          </div>
+          <div class="flight-arrow">✈️ →</div>
+          <div>
+            <div class="flight-city">Toronto YYZ</div>
+            <div class="flight-time">23:54</div>
+            <div class="flight-detail">Toronto-Pearson International, Terminal 1</div>
+          </div>
+        </div>
+        <div class="flight-detail">AC 3857 · Republic Airways / United Express</div>
+        <div class="flight-detail">Embraer E175 · Economy (G) · 1hr 40m · No meal</div>
+        <div class="flight-ref">Booking ref: LR6BZV</div>
+      </div>
+    </div>
+    <div class="alert alert-info" style="margin-top: 14px;">
+      <strong>Getting from Dulles (IAD) to your Airbnb</strong>
+      Take the <span class="metro-line ml-silver">Silver</span> Line from Dulles Airport Metro station → <strong>Metro Center</strong> (~50 min). Transfer to <span class="metro-line ml-red">Red</span> Line → <strong>NoMa-Gallaudet U</strong> (2 stops, ~5 min). Walk or short Uber to Airbnb (~12 min). Total: ~1 hr 15 min, ~$6 fare. <em>Or</em> Uber/Lyft direct: ~45–60 min, ~$50–65.
+    </div>
+  </div>
+
+  <!-- ACCOMMODATION -->
+  <div class="section" id="stay">
+    <div class="section-header">
+      <span class="section-icon">🏠</span>
+      <h2 class="section-title">Your Stay</h2>
+    </div>
+    <div class="accom-card">
+      <h3>Modern, Urban Retreat in D.C.</h3>
+      <div class="accom-detail"><strong>Address:</strong> <a href="https://www.google.com/maps/search/?api=1&query=1210+19th+St+NE+Washington+DC+20002" target="_blank" rel="noopener">1210 19th St NE, Washington, DC 20002</a></div>
+      <div class="accom-detail"><strong>Check-in:</strong> Thursday, June 25, 2026</div>
+      <div class="accom-detail"><strong>Check-out:</strong> Monday, June 29, 2026</div>
+      <div class="accom-detail"><strong>Reservation:</strong> HMXHTRE8AW</div>
+      <div class="accom-detail"><strong>Phone:</strong> <a href="tel:+13605100774">+1 360-510-0774</a></div>
+      <div class="accom-detail" style="margin-top:10px;"><strong>Nearest Metro:</strong> NoMa-Gallaudet U (<span class="metro-line ml-red">Red</span> Line) — ~12 min walk</div>
+      <div class="accom-detail"><strong>Neighborhood:</strong> Near the H Street NE corridor — one of DC's most exciting food and culture streets. Ethiopian, Taiwanese, Caribbean, Argentine bakeries, and craft gelato all within walking distance.</div>
+      <div style="margin-top: 10px;">
+        <a href="https://www.google.com/maps/search/?api=1&query=1210+19th+St+NE+Washington+DC+20002" class="btn btn-coral" target="_blank" rel="noopener">Open in Maps ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEATHER -->
+  <div class="section" id="weather">
+    <div class="section-header">
+      <span class="section-icon">🌤️</span>
+      <h2 class="section-title">Weather Forecast</h2>
+    </div>
+    <div class="weather-grid">
+      <div class="weather-day">
+        <div class="weather-date">Thu, Jun 25</div>
+        <div class="weather-icon">🌤️</div>
+        <div class="weather-temp">90°F / 32°C</div>
+        <div class="weather-low">Low: 71°F / 22°C</div>
+      </div>
+      <div class="weather-day">
+        <div class="weather-date">Fri, Jun 26</div>
+        <div class="weather-icon">☀️</div>
+        <div class="weather-temp">89°F / 32°C</div>
+        <div class="weather-low">Low: 72°F / 22°C</div>
+      </div>
+      <div class="weather-day">
+        <div class="weather-date">Sat, Jun 27</div>
+        <div class="weather-icon">⛅</div>
+        <div class="weather-temp">87°F / 31°C</div>
+        <div class="weather-low">Low: 68°F / 20°C</div>
+      </div>
+      <div class="weather-day">
+        <div class="weather-date">Sun, Jun 28</div>
+        <div class="weather-icon">⛅</div>
+        <div class="weather-temp">87°F / 31°C</div>
+        <div class="weather-low">Low: 70°F / 21°C</div>
+      </div>
+      <div class="weather-day">
+        <div class="weather-date">Mon, Jun 29</div>
+        <div class="weather-icon">🌤️</div>
+        <div class="weather-temp">92°F / 33°C</div>
+        <div class="weather-low">Low: 71°F / 22°C</div>
+      </div>
+    </div>
+    <div class="alert alert-heat">
+      <strong>☀️ DC Summer Heat Strategy</strong>
+      <ul style="margin-top: 6px;">
+        <li><strong>Mornings (before 10 AM):</strong> Best time for outdoor activities — hikes, zoo, waterfront walks.</li>
+        <li><strong>Midday (12–4 PM):</strong> Hottest hours. Take shelter in air-conditioned museums.</li>
+        <li><strong>Evenings (5 PM onward):</strong> Heat drops, crowds thin, beautiful light — ideal for neighborhood strolls and waterfront dining.</li>
+        <li>Carry a water bottle everywhere and refill at museum fountains. Sunscreen SPF 50+, reapply often.</li>
+        <li>Afternoon thunderstorms possible (30–40% chance) — keep a compact umbrella handy.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EVENTS -->
+  <div class="section" id="events">
+    <div class="section-header">
+      <span class="section-icon">🎉</span>
+      <h2 class="section-title">What's Happening in DC This Week</h2>
+    </div>
+
+    <div class="event-card" style="border-left-color: var(--teal);">
+      <h4>✨ National Geographic Museum of Exploration — Grand Opening</h4>
+      <div class="event-dates">Opens June 26 (your Day 2!)</div>
+      <p>Brand-new $300M museum at 1600 M St NW. Over 100,000 sq ft of immersive exhibits, iconic photography, a 270° theater, and the Photo Ark exhibit. You'll be among the very first visitors. Tickets: $29.99/adult.</p>
+      <a href="https://moe.nationalgeographic.org/en/visit/tickets" class="btn btn-teal" target="_blank" rel="noopener">Book Tickets ↗</a>
+    </div>
+
+    <div class="event-card">
+      <h4>🍖 Giant National Capital BBQ Battle</h4>
+      <div class="event-dates">June 27–28 (your Sat–Sun)</div>
+      <p>One of DC's biggest outdoor food festivals. BBQ pitmasters from across the country compete while you sample the results. Pennsylvania Avenue NW. Free to browse, food/drink for purchase.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=BBQ+Battle+Pennsylvania+Avenue+Washington+DC" class="btn btn-outline" target="_blank" rel="noopener">Location ↗</a>
+    </div>
+
+    <div class="event-card">
+      <h4>🍽️ EAT250 — America at the Table</h4>
+      <div class="event-dates">Through June 28</div>
+      <p>A city-wide food festival celebrating 250 years of American cuisine. Restaurants across DC are offering special collaboration dinners, tastings, and prix-fixe menus. Check participating restaurants when making reservations.</p>
+      <a href="https://dc250.us/events" class="btn btn-outline" target="_blank" rel="noopener">Event Details ↗</a>
+    </div>
+
+    <div class="event-card">
+      <h4>🎨 Arts &amp; Industries Building — Reopened</h4>
+      <div class="event-dates">June 16 – Sept 7 (limited run)</div>
+      <p>The Smithsonian's original museum building is open again for a limited time. Creative exchange spaces, rotating installations, and beautiful architecture. Free entry.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Arts+and+Industries+Building+Smithsonian" class="btn btn-outline" target="_blank" rel="noopener">Location ↗</a>
+    </div>
+
+    <div class="alert alert-info" style="margin-top: 12px;">
+      <strong>Heads up — the National Mall will be busier than usual.</strong>
+      A large public festival is running on the Mall (between 4th and 14th Streets) throughout your visit. Museums remain open and free, but expect bigger crowds around the Mall area. Arrive early for museums and use side entrances when possible.
+    </div>
+  </div>
+
+  <!-- GETTING AROUND -->
+  <div class="section" id="getting-around">
+    <div class="section-header">
+      <span class="section-icon">🚇</span>
+      <h2 class="section-title">Getting Around</h2>
+    </div>
+    <div class="alert alert-success">
+      <strong>The Metro is your best friend.</strong> DC's rail system covers everywhere you'll want to go. Use the car for Great Falls (Day 3) — otherwise, Metro + walking is faster, cheaper, and stress-free.
+    </div>
+
+    <div class="metro-card" style="margin-top: 14px;">
+      <h3>Key Metro Lines for This Trip</h3>
+      <ul>
+        <li><span class="metro-line ml-red">Red</span> <strong>Your home line.</strong> NoMa-Gallaudet U (your station) → Union Station → Gallery Place → Dupont Circle → Woodley Park (Zoo)</li>
+        <li><span class="metro-line ml-silver">Silver</span> Dulles Airport (IAD) → Rosslyn → Foggy Bottom → Metro Center → Smithsonian → L'Enfant Plaza</li>
+        <li><span class="metro-line ml-blue">Blue</span><span class="metro-line ml-orange">Orange</span><span class="metro-line ml-silver">Silver</span> Foggy Bottom (Georgetown nearby) → Smithsonian (the Mall) → L'Enfant Plaza (Spy Museum)</li>
+        <li><span class="metro-line ml-green">Green</span> Gallery Place → Waterfront (The Wharf)</li>
+        <li><span class="metro-line ml-yellow">Yellow</span><span class="metro-line ml-blue">Blue</span> L'Enfant Plaza → King Street-Old Town (Alexandria day trip)</li>
+      </ul>
+    </div>
+
+    <div class="grid-2" style="margin-top: 14px;">
+      <div class="card">
+        <h3 style="margin-bottom: 8px; font-size: 1.05rem;">SmarTrip Card</h3>
+        <ul style="font-size: 0.9rem;">
+          <li>Buy at any Metro station vending machine (including IAD)</li>
+          <li>Card: $10 ($8 credit + $2 for card)</li>
+          <li>Rides: $2.25–$6.75 (weekends max $2.50!)</li>
+          <li>Budget ~$12–$18/day for Metro</li>
+          <li>Also works on Metrobus ($2 flat)</li>
+        </ul>
+        <a href="https://www.wmata.com/fares/smartrip/" class="btn btn-teal" target="_blank" rel="noopener">SmarTrip Info ↗</a>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom: 8px; font-size: 1.05rem;">When to Use the Car</h3>
+        <ul style="font-size: 0.9rem;">
+          <li><strong>Day 3 (Great Falls):</strong> No transit access — car is the way (~30 min drive)</li>
+          <li><strong>Everything else:</strong> Metro is faster and avoids $25–$50/day parking</li>
+          <li>The <strong>D20 Metrobus</strong> runs along H Street NE (replaces the old streetcar route) — useful from your Airbnb area to Union Station</li>
+          <li>Uber/Lyft are plentiful for short hops when Metro isn't direct</li>
+        </ul>
+        <a href="https://www.wmata.com" class="btn btn-outline" target="_blank" rel="noopener">WMATA Trip Planner ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY BY DAY ITINERARY -->
+  <div class="section" id="itinerary">
+    <div class="section-header">
+      <span class="section-icon">📅</span>
+      <h2 class="section-title">Day-by-Day Itinerary</h2>
+    </div>
+
+    <!-- ============= DAY 1 ============= -->
+    <div class="day-card">
+      <div class="day-head day-head-1">
+        <div>
+          <div class="day-label">Day 1 — Thursday, June 25</div>
+          <div class="day-name">Arrive &amp; Discover H Street</div>
+        </div>
+        <div class="day-badge">90°F ☀️</div>
+      </div>
+      <div class="day-body">
+
+        <div class="activity">
+          <div class="act-time">4:38 PM</div>
+          <div class="act-body">
+            <div class="act-title">Land at Washington Dulles (IAD)</div>
+            <div class="act-desc">Flight AC 8540 from Toronto YTZ. Clear arrivals, grab your bags, and head to the Metro. The Silver Line station is inside the airport — follow signs to "Metro / Rail."</div>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">5:15 PM</div>
+          <div class="act-body">
+            <div class="act-title">🚇 Metro to Your Airbnb</div>
+            <div class="act-desc"><span class="metro-line ml-silver">Silver</span> Line from IAD → <strong>Metro Center</strong> (~50 min). Transfer to <span class="metro-line ml-red">Red</span> Line → <strong>NoMa-Gallaudet U</strong> (2 stops). Walk or short Uber to 1210 19th St NE. Buy a SmarTrip card at the IAD station vending machine — load $30 to start.</div>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">6:30 PM</div>
+          <div class="act-body">
+            <div class="act-title">Check In &amp; Freshen Up</div>
+            <div class="act-desc">Drop your bags, change into lightweight clothes, hydrate. The humidity hits the moment you step outside — you'll want to be comfortable.</div>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">7:30 PM</div>
+          <div class="act-body">
+            <div class="act-title">🍽️ Explore H Street Corridor — Dinner</div>
+            <div class="act-desc">One of DC's most exciting food streets is right in your neighborhood. Walk or short ride to the H Street NE strip for an incredible first dinner. This isn't a touristy area — it's where Washingtonians actually eat.</div>
+          </div>
+        </div>
+
+        <div class="meal-box">
+          <h4>🍽️ Dinner — Pick One</h4>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Maketto+1351+H+Street+NE+Washington+DC" target="_blank" rel="noopener">Maketto</a></strong> — <span>Taiwanese-Cambodian café in a stunning converted warehouse space. The five-spice fried chicken is legendary. Also a clothing/design shop. 1351 H St NE. $15–25/plate.</span></div>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Toki+Underground+1234+H+Street+NE+Washington+DC" target="_blank" rel="noopener">Toki Underground</a></strong> — <span>Cult-favorite Taiwanese ramen and dumplings in a graffiti-covered basement. Above The Pug bar — look for the stairs. 1234 H St NE. $14–20. Cash only.</span></div>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Ethiopic+401+H+Street+NE+Washington+DC" target="_blank" rel="noopener">Ethiopic</a></strong> — <span>One of DC's best Ethiopian restaurants. Communal platters of injera with fragrant stews, excellent vegetarian options. 401 H St NE. $12–22.</span></div>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Cane+403+H+Street+NE+Washington+DC" target="_blank" rel="noopener">Cane</a></strong> — <span>Caribbean street food: jerk wings, tender oxtail, Trin-Chinese chicken. Vibrant, fun atmosphere. 403 H St NE. $12–20.</span></div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">9:30 PM</div>
+          <div class="act-body">
+            <div class="act-title">Dessert &amp; Evening Walk</div>
+            <div class="act-desc"><strong><a href="https://www.google.com/maps/search/?api=1&query=Dolcezza+Gelato+H+Street+Washington+DC" target="_blank" rel="noopener">Dolcezza</a></strong> for artisan gelato (unique seasonal flavors, made in DC), or <strong><a href="https://www.google.com/maps/search/?api=1&query=Tango+Pastry+H+Street+NE+DC" target="_blank" rel="noopener">Tango Pastry</a></strong> for Argentine sweets. Walk the lively H Street scene — it stays vibrant into the night.</div>
+          </div>
+        </div>
+
+        <table class="map-table">
+          <caption>📍 Day 1 — tap to open in Google Maps</caption>
+          <tr><th>Stop</th><th>Map</th></tr>
+          <tr><td>Dulles Airport (IAD)</td><td><a href="https://www.google.com/maps/search/?api=1&query=Washington+Dulles+International+Airport" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>NoMa-Gallaudet U Metro</td><td><a href="https://www.google.com/maps/search/?api=1&query=NoMa+Gallaudet+U+Metro+Station+Washington+DC" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>Airbnb — 1210 19th St NE</td><td><a href="https://www.google.com/maps/search/?api=1&query=1210+19th+St+NE+Washington+DC+20002" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>H Street Corridor</td><td><a href="https://www.google.com/maps/search/?api=1&query=H+Street+Corridor+NE+Washington+DC" target="_blank" rel="noopener">Open ↗</a></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============= DAY 2 ============= -->
+    <div class="day-card">
+      <div class="day-head day-head-2">
+        <div>
+          <div class="day-label">Day 2 — Friday, June 26</div>
+          <div class="day-name">Brand-New Museum &amp; Smithsonian Classics</div>
+        </div>
+        <div class="day-badge">89°F ☀️</div>
+      </div>
+      <div class="day-body">
+
+        <div class="meal-box">
+          <h4>🥐 Breakfast — H Street (near Airbnb)</h4>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Bullfrog+Bagels+1341+H+Street+NE+DC" target="_blank" rel="noopener">Bullfrog Bagels</a></strong> — <span>Hand-rolled New York-style bagels, excellent egg sandwiches. Locals' favorite. 1341 H St NE.</span></div>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Tango+Pastry+H+Street+NE+DC" target="_blank" rel="noopener">Tango Pastry</a></strong> — <span>Fresh Argentine croissants painted with sweet syrup, empanadas, chorizo sandwiches. A unique find. H St NE.</span></div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">9:00 AM</div>
+          <div class="act-body">
+            <div class="act-title">✨ <a href="https://moe.nationalgeographic.org/en" target="_blank" rel="noopener">National Geographic Museum of Exploration</a></div>
+            <div class="act-desc">This museum literally just opened — June 26 is opening day, and you'll be among the very first visitors. A $300 million reimagining of the National Geographic headquarters with over 100,000 sq ft of exhibits. <strong>Geoverse</strong> is a 270-degree immersive theater showing diverse landscapes. <strong>Photo Ark: Animals of Earth</strong> features Joel Sartore's stunning wildlife portraits. <strong>The Archives</strong> showcases 130+ years of exploration storytelling. The building itself is beautiful — sustainably built with a rooftop outdoor experience.<br><br><strong>Why go:</strong> There is nothing else like this in DC. Immersive, visual, and about the wonder of the natural world. Perfect for curious travelers.<br><strong>Hours:</strong> 9 AM – 8 PM. <strong>Location:</strong> 1600 M Street NW.<br><strong>Getting there:</strong> <span class="metro-line ml-red">Red</span> Line to Farragut North, 5 min walk.</div>
+            <span class="act-tag tag-new">✨ OPENING DAY</span>
+            <span class="act-tag tag-paid">$29.99/adult</span>
+            <div style="margin-top: 6px;">
+              <a href="https://moe.nationalgeographic.org/en/visit/tickets" class="btn btn-teal" target="_blank" rel="noopener">Book Tickets ↗</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=National+Geographic+Museum+of+Exploration+1600+M+Street+NW+Washington+DC" class="btn btn-outline" target="_blank" rel="noopener">Directions ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="meal-box">
+          <h4>🥗 Lunch — Near the Mall</h4>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Mitsitam+Cafe+Smithsonian+Washington+DC" target="_blank" rel="noopener">Mitsitam Café</a></strong> — <span>Inside the National Museum of the American Indian. Indigenous-inspired dishes from five regions. Excellent, underrated, and not a typical museum cafeteria. $12–18.</span></div>
+          <div class="meal-option"><strong>Mall food trucks</strong> — <span>Line Madison Drive. Quick, varied, affordable.</span></div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">1:00 PM</div>
+          <div class="act-body">
+            <div class="act-title">✈️ <a href="https://airandspace.si.edu" target="_blank" rel="noopener">National Air and Space Museum</a></div>
+            <div class="act-desc">Freshly renovated with 13 reimagined galleries. See the Wright Flyer (the actual airplane from the first powered flight), the Apollo 11 Lunar Module, the Boeing Milestones of Flight Hall, and space-race artifacts. The IMAX Theater is worth a film if you want to rest your legs.<br><br><strong>Why go:</strong> One of the most visited museums in the world, and it just got a major upgrade. The aviation and space artifacts are the real thing — not replicas. Air-conditioned and enormous, perfect for the hottest part of the day.<br><strong>Hours:</strong> 10 AM – 5:30 PM. Allow 2 hours.</div>
+            <span class="act-tag tag-free">FREE — no tickets needed</span>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">3:30 PM</div>
+          <div class="act-body">
+            <div class="act-title">🎨 <a href="https://www.nga.gov/visit" target="_blank" rel="noopener">National Gallery of Art — East Building</a></div>
+            <div class="act-desc">I.M. Pei's angular masterpiece holds the modern and contemporary collection — Calder's enormous mobile floating in the sun-filled atrium, Rothko, Pollock, Matisse cut-outs. The underground concourse connecting to the West Building features Leo Villareal's <strong>"Multiverse"</strong> — thousands of LED lights creating mesmerizing patterns in a tunnel. Don't skip it.<br><br><strong>Why go:</strong> World-class art in a stunning building, completely free. The Multiverse tunnel alone is worth the visit.</div>
+            <span class="act-tag tag-free">FREE — no tickets needed</span>
+            <span class="act-tag tag-info">✨ Don't miss the Multiverse tunnel</span>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">5:30 PM</div>
+          <div class="act-body">
+            <div class="act-title">🌊 <a href="https://www.wharfdc.com" target="_blank" rel="noopener">The Wharf</a> — Waterfront Evening</div>
+            <div class="act-desc">DC's waterfront district — piers, a marina, restaurants, and the Municipal Fish Market (the oldest continuously operating open-air fish market in the US, since 1805). Take <span class="metro-line ml-green">Green</span> Line to Waterfront station (10 min from Mall). A completely different side of DC: modern, relaxed, built around the Potomac.<br><br><strong>Why go:</strong> Beautiful waterfront dining, stunning sunset views, and a lively-but-chill atmosphere. The perfect way to end a museum day.</div>
+          </div>
+        </div>
+
+        <div class="meal-box">
+          <h4>🍽️ Dinner — The Wharf</h4>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Kaliwa+The+Wharf+Washington+DC" target="_blank" rel="noopener">Kaliwa</a></strong> — <span>Filipino, Thai &amp; Korean fusion. Vibrant flavors, beautifully plated. Try the chicken adobo, green papaya salad, and Thai basil fried rice. $16–28.</span></div>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Del+Mar+The+Wharf+Washington+DC" target="_blank" rel="noopener">Del Mar</a></strong> — <span>Coastal Spanish by chef Fabio Trabocchi. Paella, grilled seafood, waterfront views. $22–38.</span></div>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Hanks+Oyster+Bar+The+Wharf+DC" target="_blank" rel="noopener">Hank's Oyster Bar</a></strong> — <span>Fresh, unfussy seafood. Great for a casual waterfront meal. $14–26.</span></div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">8:30 PM</div>
+          <div class="act-body">
+            <div class="act-title">🌅 Sunset Walk Along the Piers</div>
+            <div class="act-desc">Sunset is around 8:35 PM — the golden light on the water is gorgeous. The Wharf often hosts free outdoor concerts on summer evenings. Check <a href="https://www.wharfdc.com/upcoming-events/" target="_blank" rel="noopener">wharfdc.com/upcoming-events</a> for what's on tonight.</div>
+          </div>
+        </div>
+
+        <table class="map-table">
+          <caption>📍 Day 2 — tap to open in Google Maps</caption>
+          <tr><th>Stop</th><th>Map</th></tr>
+          <tr><td>National Geographic Museum (1600 M St NW)</td><td><a href="https://www.google.com/maps/search/?api=1&query=National+Geographic+Museum+of+Exploration+1600+M+Street+NW+Washington+DC" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>National Air and Space Museum</td><td><a href="https://www.google.com/maps/search/?api=1&query=National+Air+and+Space+Museum+Washington+DC" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>National Gallery of Art — East Building</td><td><a href="https://www.google.com/maps/search/?api=1&query=National+Gallery+of+Art+East+Building+Washington+DC" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>The Wharf</td><td><a href="https://www.google.com/maps/search/?api=1&query=The+Wharf+Washington+DC" target="_blank" rel="noopener">Open ↗</a></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============= DAY 3 ============= -->
+    <div class="day-card">
+      <div class="day-head day-head-3">
+        <div>
+          <div class="day-label">Day 3 — Saturday, June 27</div>
+          <div class="day-name">Waterfalls, Rock Scrambles &amp; Georgetown</div>
+        </div>
+        <div class="day-badge">87°F ⛅ Car Day</div>
+      </div>
+      <div class="day-body">
+
+        <div class="alert alert-tip" style="margin-bottom: 14px;">
+          <strong>🚗 Car day.</strong> Great Falls has no transit access — drive from the Airbnb (~30 min). Pack water (2L+ per person), snacks, sunscreen, and wear real hiking shoes. Arrive by 8 AM — parking fills fast on summer weekends.
+        </div>
+
+        <div class="meal-box">
+          <h4>🥐 Quick Breakfast — Grab &amp; Go</h4>
+          <div class="meal-option"><strong>Tango Pastry</strong> or <strong>Bullfrog Bagels</strong> on H Street. Grab pastries and coffee on the way out.</div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">7:30 AM</div>
+          <div class="act-body">
+            <div class="act-title">🏞️ <a href="https://www.nps.gov/grfa/index.htm" target="_blank" rel="noopener">Great Falls Park — Virginia Side</a></div>
+            <div class="act-desc">The Potomac River drops 76 feet through a narrow gorge in a series of furious cascades and Class V rapids — one of the most dramatic natural landscapes within an hour of any US capital, and most visitors never see it. Walk the River Trail to <strong>Overlooks 1, 2, and 3</strong> for increasingly stunning views of the falls and Mather Gorge below.<br><br><strong>Why go:</strong> This is jaw-dropping. The sheer power of the water crashing through ancient rock formations is not what you expect 25 minutes from downtown DC. It feels like a national park, because it is one.<br><strong>Fee:</strong> $20/vehicle (card only, no cash). <strong>Parking:</strong> Included in entrance fee.<br><strong>Getting there:</strong> ~30 min drive via George Washington Memorial Parkway.</div>
+            <span class="act-tag tag-star">⭐ Most underrated view near DC</span>
+            <span class="act-tag tag-paid">$20/vehicle</span>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">10:00 AM</div>
+          <div class="act-body">
+            <div class="act-title">🥾 <a href="https://www.nps.gov/choh/planyourvisit/billy-goat-702702702702702.htm" target="_blank" rel="noopener">Billy Goat Trail — Maryland Side</a></div>
+            <div class="act-desc">Cross to the Maryland side (Great Falls Tavern Visitor Center) for the area's signature hike — genuine rock scrambling along cliff edges above the Potomac. Three sections (A, B, C); <strong>Section A</strong> is the most dramatic with the most scrambling. Check the <a href="https://www.nps.gov/choh/planyourvisit/conditions.htm" target="_blank" rel="noopener">NPS trail conditions page</a> the morning you go — sections close after heavy rain.<br><br><strong>Why go:</strong> Real scrambling over boulders with river views. This isn't a boardwalk — it's a genuine outdoor challenge that rewards you with incredible vantage points. Wear proper shoes and bring water.<br>Allow 1.5–2 hours for one section.</div>
+            <span class="act-tag tag-free">FREE (no additional fee beyond park entry)</span>
+            <span class="act-tag tag-info">⚠️ Check trail status morning-of</span>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">12:30 PM</div>
+          <div class="act-body">
+            <div class="act-title">🚗 Drive to Georgetown</div>
+            <div class="act-desc">~25 min drive from Great Falls to Georgetown. Street parking can be tricky — try the Georgetown Waterfront Park garage or side streets south of M Street.</div>
+          </div>
+        </div>
+
+        <div class="meal-box">
+          <h4>🍽️ Lunch — Georgetown</h4>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Farmers+Fishers+Bakers+3000+K+Street+Georgetown+DC" target="_blank" rel="noopener">Farmers Fishers Bakers</a></strong> — <span>Farm-to-table, waterfront-adjacent, huge menu. Great for a filling lunch after hiking. 3000 K St NW. $15–28.</span></div>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Baked+and+Wired+Georgetown+DC" target="_blank" rel="noopener">Baked &amp; Wired</a></strong> — <span>Georgetown's favorite bakery-café. Famous giant cupcakes, excellent coffee, casual vibe. 1052 Thomas Jefferson St NW. $6–14.</span></div>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Il+Canale+Georgetown+DC" target="_blank" rel="noopener">Il Canale</a></strong> — <span>Certified Neapolitan pizza on the canal. Lively Georgetown classic. 1065 31st St NW. $14–22.</span></div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">2:30 PM</div>
+          <div class="act-body">
+            <div class="act-title">🛶 <a href="https://capital.adventuresunbound.com/key-bridge-boathouse/" target="_blank" rel="noopener">Key Bridge Boathouse — Kayak / SUP</a></div>
+            <div class="act-desc">Rent a kayak, canoe, or stand-up paddleboard and paddle the Potomac past the Georgetown waterfront, around Theodore Roosevelt Island, and under the beautiful Key Bridge. The perspective on the city from the water is unforgettable.<br><br><strong>Why go:</strong> Completely different vantage point on DC. Relaxing after a morning of hiking, and the calm stretches near the boathouse are beginner-friendly.<br><strong>Fee:</strong> ~$22–35/person for 2 hours. <strong>Location:</strong> 3500 Water St NW.<br><strong>Tip:</strong> Reserve ahead for Saturday afternoons at <a href="https://capital.adventuresunbound.com/key-bridge-boathouse/" target="_blank" rel="noopener">capital.adventuresunbound.com</a>.</div>
+            <span class="act-tag tag-paid">~$22–35/person</span>
+            <span class="act-tag tag-info">Reserve ahead for weekends</span>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">5:00 PM</div>
+          <div class="act-body">
+            <div class="act-title">🌿 C&amp;O Canal Towpath &amp; Georgetown Shops</div>
+            <div class="act-desc">Walk the shaded, flat canal towpath — a peaceful historic path through Georgetown. Then explore M Street and Wisconsin Avenue for independent shops, galleries, and street life. Georgetown is one of DC's most beautiful and walkable neighborhoods.</div>
+          </div>
+        </div>
+
+        <div class="meal-box">
+          <h4>🍽️ Dinner — Georgetown</h4>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Filomena+Ristorante+Georgetown+DC" target="_blank" rel="noopener">Filomena Ristorante</a></strong> — <span>Georgetown institution for Italian. Famous for the "pasta ladies" hand-rolling fresh pasta in the window. Generous portions, warm atmosphere, perfect after a long day outdoors. 1063 Wisconsin Ave NW. $18–35.</span></div>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Martin's+Tavern+Georgetown+DC" target="_blank" rel="noopener">Martin's Tavern</a></strong> — <span>Georgetown's oldest restaurant (est. 1933). Classic American — burgers, crab cakes, steaks. Cozy wooden booths with character. 1264 Wisconsin Ave NW. $16–32.</span></div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">9:00 PM</div>
+          <div class="act-body">
+            <div class="act-title">Georgetown Waterfront Park</div>
+            <div class="act-desc">End the day with a stroll along the Potomac. The waterfront park has great views, benches, and a relaxed evening atmosphere.</div>
+          </div>
+        </div>
+
+        <table class="map-table">
+          <caption>📍 Day 3 — tap to open in Google Maps</caption>
+          <tr><th>Stop</th><th>Map</th></tr>
+          <tr><td>Great Falls Park (Virginia)</td><td><a href="https://www.google.com/maps/search/?api=1&query=Great+Falls+Park+Virginia" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>Great Falls Tavern (Maryland / Billy Goat Trail)</td><td><a href="https://www.google.com/maps/search/?api=1&query=Great+Falls+Tavern+Visitor+Center+Maryland" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>Key Bridge Boathouse</td><td><a href="https://www.google.com/maps/search/?api=1&query=Key+Bridge+Boathouse+Georgetown" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>Georgetown — M Street</td><td><a href="https://www.google.com/maps/search/?api=1&query=M+Street+Georgetown+Washington+DC" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>C&amp;O Canal Towpath</td><td><a href="https://www.google.com/maps/search/?api=1&query=C+and+O+Canal+Towpath+Georgetown" target="_blank" rel="noopener">Open ↗</a></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============= DAY 4 ============= -->
+    <div class="day-card">
+      <div class="day-head day-head-4">
+        <div>
+          <div class="day-label">Day 4 — Sunday, June 28</div>
+          <div class="day-name">Pandas, Sunday Market &amp; Neighborhood Gems</div>
+        </div>
+        <div class="day-badge">87°F ⛅</div>
+      </div>
+      <div class="day-body">
+
+        <div class="activity">
+          <div class="act-time">7:45 AM</div>
+          <div class="act-body">
+            <div class="act-title">🚇 Metro to the Zoo</div>
+            <div class="act-desc"><span class="metro-line ml-red">Red</span> Line from NoMa-Gallaudet U → <strong>Woodley Park-Zoo</strong> (~10 min). The zoo entrance is a short downhill walk from the station.</div>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">8:00 AM</div>
+          <div class="act-body">
+            <div class="act-title">🐼 <a href="https://nationalzoo.si.edu" target="_blank" rel="noopener">Smithsonian National Zoo</a></div>
+            <div class="act-desc">Opens at 8 AM — go right at opening before the heat and crowds. <strong>Giant pandas Bao Li and Qing Bao</strong> returned to DC in late 2024 and are the stars. Also: the Great Ape House (gorillas and orangutans on an outdoor trail), the American Trail (seals, sea lions, eagles), and the lush Amazonia rainforest building. The 163-acre hilly, wooded campus is genuinely pleasant to walk at 8 AM.<br><br><strong>Why go:</strong> One of the best zoos in the world, and it's completely free. The pandas alone are worth the early morning, and the diversity of habitats — from tropical rainforest to cool mountain environments — is remarkable. Allow 2–3 hours.</div>
+            <span class="act-tag tag-free">FREE — Smithsonian</span>
+            <span class="act-tag tag-info">🐼 Giant pandas returned 2024</span>
+          </div>
+        </div>
+
+        <div class="meal-box">
+          <h4>🥞 Brunch — Your Pick</h4>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Le+Diplomate+1601+14th+Street+NW+Washington+DC" target="_blank" rel="noopener">Le Diplomate</a></strong> — <span>Stunning Parisian-style brasserie on 14th St. Croissants, croque madame, steak frites, excellent coffee. Feels like you've been dropped into Montmartre. Reservations recommended. 1601 14th St NW. $16–28.</span></div>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Call+Your+Mother+Deli+Washington+DC" target="_blank" rel="noopener">Call Your Mother</a></strong> — <span>Beloved Jewish deli with amazing bagel sandwiches. Try the "Shyne" (smoked salmon, dill cream cheese) or "Shiksa" (bacon, egg, cheese). Multiple locations. $10–16.</span></div>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Milk+and+Honey+1018+H+Street+NE+DC" target="_blank" rel="noopener">Milk &amp; Honey</a></strong> — <span>Back on H Street near your Airbnb. Southern-inspired brunch: chicken &amp; waffles, shrimp &amp; grits, fluffy pancakes. 1018 H St NE. $14–22.</span></div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">1:00 PM</div>
+          <div class="act-body">
+            <div class="act-title">🛍️ <a href="https://www.google.com/maps/search/?api=1&query=Eastern+Market+225+7th+Street+SE+Washington+DC" target="_blank" rel="noopener">Eastern Market — Sunday Flea Market</a></div>
+            <div class="act-desc">Capitol Hill's beloved public market with a legendary <strong>Sunday outdoor flea market</strong>. Local artisans, vintage finds, handmade jewelry, fresh produce, and street food. The indoor market hall (built 1873) is beautiful in its own right. Close to your Airbnb.<br><br><strong>Why go:</strong> This is how Washingtonians spend their Sundays. Great for browsing, snacking, and people-watching. The mix of arts, food, and community is special. Free to browse.<br><strong>Location:</strong> 225 7th St SE. Metro: Eastern Market (<span class="metro-line ml-blue">Blue</span>/<span class="metro-line ml-orange">Orange</span>/<span class="metro-line ml-silver">Silver</span>).</div>
+            <span class="act-tag tag-free">FREE to browse</span>
+            <span class="act-tag tag-info">Sunday flea market is legendary</span>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">2:30 PM</div>
+          <div class="act-body">
+            <div class="act-title">🎨 <a href="https://americanart.si.edu/visit/renwick" target="_blank" rel="noopener">Renwick Gallery</a></div>
+            <div class="act-desc">A gorgeous Second Empire-style building dedicated to contemporary American craft and design. Easy to miss, which is exactly why it's worth the detour. Current exhibitions (through Sept 2026): <strong>"State Fairs: Growing American Craft"</strong> and Justin Favela's immersive <strong>"Capilla de Maíz"</strong> installation.<br><br><strong>Why go:</strong> Small, beautiful, and deeply creative. The building alone is stunning, and the craft-focused exhibits are unlike anything else on the Mall. A refreshing contrast to the big Smithsonians.<br><strong>Hours:</strong> 10 AM–5:30 PM. No tickets needed.<br><strong>Location:</strong> 1661 Pennsylvania Ave NW.</div>
+            <span class="act-tag tag-free">FREE — no tickets needed</span>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">4:00 PM</div>
+          <div class="act-body">
+            <div class="act-title">🏛️ <a href="https://www.si.edu/museums/arts-and-industries-building" target="_blank" rel="noopener">Arts &amp; Industries Building</a></div>
+            <div class="act-desc">The Smithsonian's original 1881 museum building, reopened for a limited run (June 16 – Sept 7, 2026). Creative exchange spaces, rotating art installations, and gorgeous Victorian architecture.<br><br><strong>Why go:</strong> This building is rarely open to the public. The architecture alone is worth stepping inside, and the limited-time installations add a special-occasion feel. Free.<br><strong>Location:</strong> 900 Jefferson Drive SW.</div>
+            <span class="act-tag tag-free">FREE</span>
+            <span class="act-tag tag-new">Limited-time reopening</span>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">5:30 PM</div>
+          <div class="act-body">
+            <div class="act-title">🎶 Explore U Street &amp; Adams Morgan</div>
+            <div class="act-desc">Two of DC's liveliest neighborhoods. <strong>U Street</strong> has deep musical roots — Duke Ellington grew up here — with independent shops, live-music venues, and great food. Walk north to <strong>Adams Morgan</strong> (~20 min) for more restaurants, colorful murals, and a diverse, vibrant atmosphere. Metro: U Street (<span class="metro-line ml-green">Green</span>/<span class="metro-line ml-yellow">Yellow</span>).</div>
+          </div>
+        </div>
+
+        <div class="meal-box">
+          <h4>🍽️ Dinner — Choose Your Vibe</h4>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Rasika+633+D+Street+NW+Washington+DC" target="_blank" rel="noopener">Rasika</a></strong> — <span>Modern Indian cuisine, consistently in DC's top 10. The palak chaat (crispy spinach) and tawa lamb chops are must-orders. Reserve ahead on OpenTable. 633 D St NW. $18–36. (Penn Quarter — for a special dinner.)</span></div>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Ben's+Chili+Bowl+1213+U+Street+NW+DC" target="_blank" rel="noopener">Ben's Chili Bowl</a></strong> — <span>DC institution since 1958. Half-smokes (a DC-specific sausage), chili dogs, chili cheese fries. Cheap, fast, legendary. Open very late. 1213 U St NW. $6–12.</span></div>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Namak+Adams+Morgan+Washington+DC" target="_blank" rel="noopener">Namak</a></strong> — <span>Eastern Mediterranean in Adams Morgan. Mix of old and new world flavors — lamb kebabs, charred eggplant, fresh pita. 1633 P St NW. $16–28.</span></div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">9:00 PM</div>
+          <div class="act-body">
+            <div class="act-title">🍦 Dessert Walk</div>
+            <div class="act-desc"><strong><a href="https://www.google.com/maps/search/?api=1&query=Ice+Cream+Jubilee+Washington+DC" target="_blank" rel="noopener">Ice Cream Jubilee</a></strong> — unique DC-made ice cream flavors (Thai iced tea, honey lemon lavender, banana bourbon caramel). Multiple locations. Then walk the vibrant U Street or Adams Morgan scene.</div>
+          </div>
+        </div>
+
+        <table class="map-table">
+          <caption>📍 Day 4 — tap to open in Google Maps</caption>
+          <tr><th>Stop</th><th>Map</th></tr>
+          <tr><td>National Zoo</td><td><a href="https://www.google.com/maps/search/?api=1&query=Smithsonian+National+Zoo+Washington+DC" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>Eastern Market</td><td><a href="https://www.google.com/maps/search/?api=1&query=Eastern+Market+225+7th+St+SE+Washington+DC" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>Renwick Gallery</td><td><a href="https://www.google.com/maps/search/?api=1&query=Renwick+Gallery+Washington+DC" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>Arts &amp; Industries Building</td><td><a href="https://www.google.com/maps/search/?api=1&query=Arts+and+Industries+Building+Smithsonian" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>U Street Corridor</td><td><a href="https://www.google.com/maps/search/?api=1&query=U+Street+Corridor+Washington+DC" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>Adams Morgan</td><td><a href="https://www.google.com/maps/search/?api=1&query=Adams+Morgan+Washington+DC" target="_blank" rel="noopener">Open ↗</a></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- ============= DAY 5 ============= -->
+    <div class="day-card">
+      <div class="day-head day-head-5">
+        <div>
+          <div class="day-label">Day 5 — Monday, June 29</div>
+          <div class="day-name">Spies, Last Bites &amp; Departure</div>
+        </div>
+        <div class="day-badge">92°F 🌤️ Flight 22:14</div>
+      </div>
+      <div class="day-body">
+
+        <div class="alert alert-info" style="margin-bottom: 14px;">
+          <strong>Flight AC 3857 departs IAD at 22:14.</strong> Plan to leave the city by ~7:00 PM. Silver Line from Metro Center → IAD takes ~55 min. Arrive at Dulles by ~8:00 PM for comfortable boarding. You have a full day!
+        </div>
+
+        <div class="meal-box">
+          <h4>🥐 Special Farewell Breakfast</h4>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Un+Je+Ne+Sais+Quoi+H+Street+NE+DC" target="_blank" rel="noopener">Un Je Ne Sais Quoi</a></strong> — <span>"The best croissants in the city." French bakery on H Street — specialty pastries available before 10 AM. Near your Airbnb! 1361 H St NE.</span></div>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Ted's+Bulletin+1818+14th+Street+NW+DC" target="_blank" rel="noopener">Ted's Bulletin</a></strong> — <span>Homemade Pop-Tarts, classic American diner breakfast, thick milkshakes. A beloved DC brunch spot. 1818 14th St NW. $12–18.</span></div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">9:30 AM</div>
+          <div class="act-body">
+            <div class="act-title">Check out of Airbnb</div>
+            <div class="act-desc">Pack up and check out. You can leave luggage at a locker service — <strong>Bounce</strong> or <strong>LuggageHero</strong> have locations near Union Station and Penn Quarter (~$6–8/bag/day). Or just take your bags — the Spy Museum area has lockers nearby.</div>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">10:00 AM</div>
+          <div class="act-body">
+            <div class="act-title">🕵️ <a href="https://www.spymuseum.org" target="_blank" rel="noopener">International Spy Museum</a></div>
+            <div class="act-desc">The most interactive museum in DC. It's about the tradecraft and technology of espionage — not about any country's politics, just the craft itself. You're assigned a <strong>cover identity</strong> at the door and have to maintain it through the exhibits. Real Cold War artifacts, concealment devices, code-breaking machines, and genuinely hands-on experiences.<br><br><strong>Why go:</strong> Unlike anything else in DC (or anywhere). Engaging for all ages, deeply interactive, and fascinating even if you've never thought about espionage before. The James Bond vehicle collection and the real-life spy gadgets are mind-blowing.<br><strong>Fee:</strong> $25–27/adult. Book online.<br><strong>Hours:</strong> 10 AM – 6 PM. Allow 2–2.5 hours.<br><strong>Location:</strong> 700 L'Enfant Plaza SW. Metro: L'Enfant Plaza.</div>
+            <span class="act-tag tag-paid">$25–27/adult</span>
+            <span class="act-tag tag-info">🎯 Genuinely interactive</span>
+            <div style="margin-top: 6px;">
+              <a href="https://www.spymuseum.org/tickets" class="btn btn-teal" target="_blank" rel="noopener">Book Tickets ↗</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=International+Spy+Museum+Washington+DC" class="btn btn-outline" target="_blank" rel="noopener">Directions ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="meal-box">
+          <h4>🥗 Lunch — Penn Quarter</h4>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Zaytinya+701+9th+Street+NW+Washington+DC" target="_blank" rel="noopener">Zaytinya</a></strong> — <span>Mediterranean mezze by José Andrés. Greek, Turkish &amp; Lebanese flavors — order a spread of small plates: octopus santorini, lamb flatbread, falafel, hummus. Beautiful bright space. 701 9th St NW. $16–30.</span></div>
+          <div class="meal-option"><strong><a href="https://www.google.com/maps/search/?api=1&query=Old+Ebbitt+Grill+675+15th+Street+NW+DC" target="_blank" rel="noopener">Old Ebbitt Grill</a></strong> — <span>DC's oldest saloon (est. 1856). Burgers, crab cakes, oysters. Gorgeous mahogany interior. Best at lunch (less wait). 675 15th St NW. $16–32.</span></div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">2:00 PM</div>
+          <div class="act-body">
+            <div class="act-title">🏘️ Optional: Old Town Alexandria Day Trip</div>
+            <div class="act-desc">A charming, walkable waterfront town just 20 minutes by Metro. <span class="metro-line ml-yellow">Yellow</span> or <span class="metro-line ml-blue">Blue</span> Line from L'Enfant Plaza → <strong>King Street-Old Town</strong>. Walk the gorgeous mile of King Street from the Metro to the waterfront — lined with boutiques, galleries, and cafés. Visit the <strong>Torpedo Factory Art Center</strong> — 82 artist studios in a converted WWII torpedo factory (free). Stroll the Alexandria Waterfront along the Potomac. Great for a relaxed, easy afternoon.<br><br><strong>Why go:</strong> A completely different vibe from DC. Historic brick streets, independent shops, waterfront charm. The Torpedo Factory is genuinely unique — watch artists work in their studios. No rush, no crowds.<br><strong>Fee:</strong> Free to explore. Metro fare ~$4 round trip.</div>
+            <span class="act-tag tag-free">FREE to explore</span>
+            <span class="act-tag tag-info">20 min by Metro</span>
+            <div style="margin-top: 6px;">
+              <a href="https://www.google.com/maps/search/?api=1&query=King+Street+Old+Town+Alexandria+Virginia" class="btn btn-outline" target="_blank" rel="noopener">Alexandria in Maps ↗</a>
+              <a href="https://www.visitalexandriava.com" class="btn btn-outline" target="_blank" rel="noopener">Visit Alexandria ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">5:00 PM</div>
+          <div class="act-body">
+            <div class="act-title">Return to DC / Collect luggage</div>
+            <div class="act-desc">Head back to pick up any stored luggage or visit one last spot you missed.</div>
+          </div>
+        </div>
+
+        <div class="meal-box">
+          <h4>🍽️ Early Farewell Dinner (~6:00 PM)</h4>
+          <div class="meal-option"><strong>Back on H Street</strong> — <span>One last meal in your neighborhood. Maketto, Ethiopic, or Cane if you haven't tried them yet.</span></div>
+          <div class="meal-option"><strong>Or grab quick bites near Metro</strong> — <span>Somewhere close to a Silver Line station for easy airport access afterward.</span></div>
+        </div>
+
+        <div class="activity">
+          <div class="act-time">7:00 PM</div>
+          <div class="act-body">
+            <div class="act-title">🚇 Head to Dulles Airport (IAD)</div>
+            <div class="act-desc"><span class="metro-line ml-silver">Silver</span> Line from Metro Center → IAD (~55 min). Or from any station, route through Metro Center. Arrive at Dulles by ~8:00 PM. Flight AC 3857 departs 22:14, arrives Toronto YYZ at 23:54. Booking ref: <strong>LR6BZV</strong>.</div>
+          </div>
+        </div>
+
+        <table class="map-table">
+          <caption>📍 Day 5 — tap to open in Google Maps</caption>
+          <tr><th>Stop</th><th>Map</th></tr>
+          <tr><td>International Spy Museum</td><td><a href="https://www.google.com/maps/search/?api=1&query=International+Spy+Museum+Washington+DC" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>Old Town Alexandria</td><td><a href="https://www.google.com/maps/search/?api=1&query=King+Street+Old+Town+Alexandria+Virginia" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>Torpedo Factory Art Center</td><td><a href="https://www.google.com/maps/search/?api=1&query=Torpedo+Factory+Art+Center+Alexandria+VA" target="_blank" rel="noopener">Open ↗</a></td></tr>
+          <tr><td>Dulles Airport (IAD)</td><td><a href="https://www.google.com/maps/search/?api=1&query=Washington+Dulles+International+Airport" target="_blank" rel="noopener">Open ↗</a></td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /itinerary section -->
+
+  <!-- RESTAURANT GUIDE -->
+  <div class="section" id="food-guide">
+    <div class="section-header">
+      <span class="section-icon">🍽️</span>
+      <h2 class="section-title">Restaurant Guide</h2>
+    </div>
+    <div class="alert alert-tip">
+      <strong>Tip:</strong> Many restaurants near the Mall have tourist-rush pricing. Venture 3–4 Metro stops away (H Street, U Street, Adams Morgan, Shaw) for better food and value. Your Airbnb on H Street puts you in one of DC's best food neighborhoods.
+    </div>
+
+    <h3 style="margin: 20px 0 10px; font-size: 1.15rem;">🥐 Breakfast, Brunch &amp; Bakeries</h3>
+    <div class="food-section-grid">
+      <div class="food-card brunch">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Un+Je+Ne+Sais+Quoi+H+Street+NE+DC" target="_blank" rel="noopener">Un Je Ne Sais Quoi</a></h4>
+        <div class="food-loc">H Street NE (near Airbnb)</div>
+        <div class="food-price">$6–14</div>
+        <p>"The best croissants in the city." French bakery with specialty pastries available before 10 AM — pain au chocolat, kouign-amann, almond croissants. Go early for the best selection.</p>
+      </div>
+      <div class="food-card brunch">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Bullfrog+Bagels+1341+H+Street+NE+DC" target="_blank" rel="noopener">Bullfrog Bagels</a></h4>
+        <div class="food-loc">1341 H St NE (near Airbnb)</div>
+        <div class="food-price">$6–12</div>
+        <p>Hand-rolled New York-style bagels, excellent egg sandwiches, cream cheese options. Locals' favorite morning stop. Quick and satisfying.</p>
+      </div>
+      <div class="food-card brunch">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Le+Diplomate+1601+14th+Street+NW+Washington+DC" target="_blank" rel="noopener">Le Diplomate</a></h4>
+        <div class="food-loc">1601 14th St NW (Logan Circle)</div>
+        <div class="food-price">$16–28</div>
+        <p>Parisian-style brasserie that looks cut from Montmartre. Croissants, croque madame, steak frites. Beautiful interior, buzzy sidewalk seating. Reservations recommended for brunch.</p>
+      </div>
+      <div class="food-card brunch">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Call+Your+Mother+Deli+Washington+DC" target="_blank" rel="noopener">Call Your Mother</a></h4>
+        <div class="food-loc">Multiple locations</div>
+        <div class="food-price">$10–16</div>
+        <p>Beloved Jewish deli with creative bagel sandwiches. Try "The Shyne" (smoked salmon, dill cream cheese) or "The Shiksa" (bacon, egg, cheese, special sauce). Expect a line — it moves fast and is worth it.</p>
+      </div>
+      <div class="food-card brunch">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Tango+Pastry+H+Street+NE+DC" target="_blank" rel="noopener">Tango Pastry</a></h4>
+        <div class="food-loc">H Street NE (near Airbnb)</div>
+        <div class="food-price">$5–10</div>
+        <p>Argentine bakery with croissants painted in sweet syrup, fresh empanadas, and chorizo sandwiches. A unique find you won't see in most cities.</p>
+      </div>
+      <div class="food-card brunch">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Milk+and+Honey+1018+H+Street+NE+DC" target="_blank" rel="noopener">Milk &amp; Honey</a></h4>
+        <div class="food-loc">1018 H St NE (near Airbnb)</div>
+        <div class="food-price">$14–22</div>
+        <p>Southern-inspired brunch: chicken &amp; waffles, shrimp &amp; grits, fluffy pancakes, and mimosas. Warm, welcoming atmosphere.</p>
+      </div>
+      <div class="food-card brunch">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Ted's+Bulletin+1818+14th+Street+NW+DC" target="_blank" rel="noopener">Ted's Bulletin</a></h4>
+        <div class="food-loc">1818 14th St NW</div>
+        <div class="food-price">$12–18</div>
+        <p>Homemade Pop-Tarts (yes, really — and they're incredible), classic diner breakfast, thick milkshakes, all-day brunch vibes.</p>
+      </div>
+      <div class="food-card brunch">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Baked+and+Wired+Georgetown+DC" target="_blank" rel="noopener">Baked &amp; Wired</a></h4>
+        <div class="food-loc">1052 Thomas Jefferson St NW (Georgetown)</div>
+        <div class="food-price">$6–14</div>
+        <p>Georgetown's most famous bakery-café. Giant, towering cupcakes, excellent espresso, casual canal-side setting. Perfect for a Georgetown morning.</p>
+      </div>
+    </div>
+
+    <h3 style="margin: 24px 0 10px; font-size: 1.15rem;">🥗 Lunch</h3>
+    <div class="food-section-grid">
+      <div class="food-card lunch">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Maketto+1351+H+Street+NE+Washington+DC" target="_blank" rel="noopener">Maketto</a></h4>
+        <div class="food-loc">1351 H St NE (near Airbnb)</div>
+        <div class="food-price">$15–25</div>
+        <p>Taiwanese-Cambodian café in a stunning converted warehouse that doubles as a design/clothing shop. Five-spice fried chicken, pan-fried noodles, dim sum. One of the most unique restaurant concepts in DC.</p>
+      </div>
+      <div class="food-card lunch">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Zaytinya+701+9th+Street+NW+Washington+DC" target="_blank" rel="noopener">Zaytinya</a></h4>
+        <div class="food-loc">701 9th St NW (Penn Quarter)</div>
+        <div class="food-price">$16–30</div>
+        <p>Mediterranean mezze by José Andrés — Greek, Turkish &amp; Lebanese flavors. Order a spread of small plates: octopus santorini, lamb flatbread, crispy Brussels sprouts, hummus. Beautiful bright space.</p>
+      </div>
+      <div class="food-card lunch">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Mitsitam+Cafe+Smithsonian+Washington+DC" target="_blank" rel="noopener">Mitsitam Café</a></h4>
+        <div class="food-loc">Inside National Museum of the American Indian (Mall)</div>
+        <div class="food-price">$12–18</div>
+        <p>Indigenous-inspired cuisine from five regions. Far better than a typical museum café — fry bread tacos, cedar-planked salmon, wild rice bowls. Underrated and excellent.</p>
+      </div>
+      <div class="food-card lunch">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Farmers+Fishers+Bakers+Georgetown+DC" target="_blank" rel="noopener">Farmers Fishers Bakers</a></h4>
+        <div class="food-loc">3000 K St NW (Georgetown Waterfront)</div>
+        <div class="food-price">$15–28</div>
+        <p>Farm-to-table with a huge menu covering everything from sushi to pizza to burgers. Waterfront-adjacent, family-friendly, good portions.</p>
+      </div>
+      <div class="food-card lunch">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Old+Ebbitt+Grill+675+15th+Street+NW+DC" target="_blank" rel="noopener">Old Ebbitt Grill</a></h4>
+        <div class="food-loc">675 15th St NW (Penn Quarter)</div>
+        <div class="food-price">$16–32</div>
+        <p>DC's oldest saloon (est. 1856). Gorgeous mahogany interior, excellent burgers, crab cakes, and oysters. Best visited at lunch when the wait is shorter.</p>
+      </div>
+    </div>
+
+    <h3 style="margin: 24px 0 10px; font-size: 1.15rem;">🍽️ Dinner</h3>
+    <div class="food-section-grid">
+      <div class="food-card dinner">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Rasika+633+D+Street+NW+Washington+DC" target="_blank" rel="noopener">Rasika</a> ⭐</h4>
+        <div class="food-loc">633 D St NW (Penn Quarter)</div>
+        <div class="food-price">$18–36</div>
+        <p>Modern Indian cuisine — consistently ranked in DC's top 10. The palak chaat (crispy spinach with sweet yogurt) is iconic. Also try tawa lamb chops and black cod. Reserve ahead on <a href="https://www.opentable.com/r/rasika-washington" target="_blank" rel="noopener">OpenTable</a>.</p>
+      </div>
+      <div class="food-card dinner">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Kaliwa+The+Wharf+Washington+DC" target="_blank" rel="noopener">Kaliwa</a></h4>
+        <div class="food-loc">The Wharf</div>
+        <div class="food-price">$16–28</div>
+        <p>Filipino, Thai &amp; Korean fusion. Vibrant, bold flavors — chicken adobo, green papaya salad, Korean fried chicken, Thai basil fried rice. Lively waterfront setting.</p>
+      </div>
+      <div class="food-card dinner">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Ethiopic+401+H+Street+NE+Washington+DC" target="_blank" rel="noopener">Ethiopic</a></h4>
+        <div class="food-loc">401 H St NE (near Airbnb)</div>
+        <div class="food-price">$12–22</div>
+        <p>One of DC's best Ethiopian restaurants. Communal injera platters with fragrant stews, excellent vegetarian options, and rich Ethiopian coffee. A cuisine DC does better than almost any other US city.</p>
+      </div>
+      <div class="food-card dinner">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Filomena+Ristorante+Georgetown+DC" target="_blank" rel="noopener">Filomena Ristorante</a></h4>
+        <div class="food-loc">1063 Wisconsin Ave NW (Georgetown)</div>
+        <div class="food-price">$18–35</div>
+        <p>Georgetown institution. Watch the "pasta ladies" hand-rolling fresh pasta through the window. Generous portions, warm Italian atmosphere, perfect after a day exploring Georgetown.</p>
+      </div>
+      <div class="food-card dinner">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Ben's+Chili+Bowl+1213+U+Street+NW+DC" target="_blank" rel="noopener">Ben's Chili Bowl</a></h4>
+        <div class="food-loc">1213 U St NW</div>
+        <div class="food-price">$6–12</div>
+        <p>DC institution since 1958. Half-smokes (a DC-specific sausage), chili dogs, chili cheese fries. Cheap, fast, legendary. Open very late. A must-try at least once.</p>
+      </div>
+      <div class="food-card dinner">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Del+Mar+The+Wharf+Washington+DC" target="_blank" rel="noopener">Del Mar</a></h4>
+        <div class="food-loc">The Wharf</div>
+        <div class="food-price">$22–38</div>
+        <p>Coastal Spanish by chef Fabio Trabocchi. Paella, grilled whole fish, Ibérico ham. Elegant waterfront setting with marina views.</p>
+      </div>
+      <div class="food-card dinner">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Founding+Farmers+DC" target="_blank" rel="noopener">Founding Farmers</a></h4>
+        <div class="food-loc">Pennsylvania Ave NW</div>
+        <div class="food-price">$16–30</div>
+        <p>Farm-to-table comfort food with a huge menu. Great for groups who can't agree on one cuisine. Reservations recommended.</p>
+      </div>
+      <div class="food-card dinner">
+        <h4><a href="https://www.google.com/maps/search/?api=1&query=Namak+Adams+Morgan+Washington+DC" target="_blank" rel="noopener">Namak</a></h4>
+        <div class="food-loc">Adams Morgan</div>
+        <div class="food-price">$16–28</div>
+        <p>Eastern Mediterranean adventure — lamb kebabs, charred eggplant, fresh pita, mezze platters. Warm, inviting space in the heart of Adams Morgan.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEES -->
+  <div class="section" id="fees">
+    <div class="section-header">
+      <span class="section-icon">💵</span>
+      <h2 class="section-title">Fees Summary</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="color: #065F46; margin-bottom: 10px;">FREE Attractions</h3>
+        <table style="width:100%; font-size: 0.88rem;">
+          <tr><td style="padding: 5px 0; border-bottom: 1px solid var(--border);">National Air and Space Museum</td><td class="fee-free" style="text-align:right;">FREE</td></tr>
+          <tr><td style="padding: 5px 0; border-bottom: 1px solid var(--border);">National Gallery of Art</td><td class="fee-free" style="text-align:right;">FREE</td></tr>
+          <tr><td style="padding: 5px 0; border-bottom: 1px solid var(--border);">Smithsonian National Zoo</td><td class="fee-free" style="text-align:right;">FREE</td></tr>
+          <tr><td style="padding: 5px 0; border-bottom: 1px solid var(--border);">Renwick Gallery</td><td class="fee-free" style="text-align:right;">FREE</td></tr>
+          <tr><td style="padding: 5px 0; border-bottom: 1px solid var(--border);">Arts &amp; Industries Building</td><td class="fee-free" style="text-align:right;">FREE</td></tr>
+          <tr><td style="padding: 5px 0; border-bottom: 1px solid var(--border);">Eastern Market (browsing)</td><td class="fee-free" style="text-align:right;">FREE</td></tr>
+          <tr><td style="padding: 5px 0; border-bottom: 1px solid var(--border);">Old Town Alexandria</td><td class="fee-free" style="text-align:right;">FREE</td></tr>
+          <tr><td style="padding: 5px 0;">Torpedo Factory Art Center</td><td class="fee-free" style="text-align:right;">FREE</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3 style="color: var(--coral); margin-bottom: 10px;">Paid Attractions</h3>
+        <table style="width:100%; font-size: 0.88rem;">
+          <tr><td style="padding: 5px 0; border-bottom: 1px solid var(--border);">National Geographic Museum</td><td class="fee-paid" style="text-align:right;">$29.99/adult</td></tr>
+          <tr><td style="padding: 5px 0; border-bottom: 1px solid var(--border);">International Spy Museum</td><td class="fee-paid" style="text-align:right;">$25–27/adult</td></tr>
+          <tr><td style="padding: 5px 0; border-bottom: 1px solid var(--border);">Great Falls Park (per vehicle)</td><td class="fee-paid" style="text-align:right;">$20</td></tr>
+          <tr><td style="padding: 5px 0; border-bottom: 1px solid var(--border);">Kayak/SUP rental (~2 hrs)</td><td class="fee-paid" style="text-align:right;">~$22–35/person</td></tr>
+          <tr><td style="padding: 5px 0; border-bottom: 1px solid var(--border);">Metro (5 days)</td><td class="fee-paid" style="text-align:right;">~$60–80 total</td></tr>
+          <tr><td style="padding: 5px 0;">SmarTrip card</td><td class="fee-paid" style="text-align:right;">$2 (one-time)</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- PACKING LIST -->
+  <div class="section" id="packing">
+    <div class="section-header">
+      <span class="section-icon">🎒</span>
+      <h2 class="section-title">Packing List — DC Summer</h2>
+    </div>
+    <div class="pack-grid">
+      <div class="pack-card">
+        <h4>Clothing</h4>
+        <ul>
+          <li>Lightweight moisture-wicking shirts (3–4)</li>
+          <li>Walking shorts / lightweight pants</li>
+          <li>NO denim (miserable by noon)</li>
+          <li>Comfortable walking shoes (8–12 mi/day)</li>
+          <li>Light jacket for aggressive A/C</li>
+          <li>Compact umbrella (afternoon storms)</li>
+        </ul>
+      </div>
+      <div class="pack-card">
+        <h4>Sun &amp; Heat</h4>
+        <ul>
+          <li>Sunscreen SPF 50+ (reapply often)</li>
+          <li>Baseball cap or sun hat</li>
+          <li>Sunglasses (high UV)</li>
+          <li>1.5L water bottle (refill at museums)</li>
+          <li>Electrolyte tablets or Liquid IV</li>
+          <li>Lip balm with SPF</li>
+        </ul>
+      </div>
+      <div class="pack-card">
+        <h4>Tech &amp; Documents</h4>
+        <ul>
+          <li>Passport (US entry from Canada)</li>
+          <li>Driver's license</li>
+          <li>Portable power bank</li>
+          <li>Offline Google Maps for DC</li>
+          <li>WMATA app (Metro planner)</li>
+          <li>Booking confirmations saved</li>
+        </ul>
+      </div>
+      <div class="pack-card">
+        <h4>Day 3 — Hiking Gear</h4>
+        <ul>
+          <li>Real hiking shoes (not sneakers)</li>
+          <li>2L+ water per person</li>
+          <li>Trail snacks (granola bars, nuts)</li>
+          <li>Small towel</li>
+          <li>Change of clothes for after</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY LINKS -->
+  <div class="section" id="links">
+    <div class="section-header">
+      <span class="section-icon">🔗</span>
+      <h2 class="section-title">Key Links</h2>
+    </div>
+    <div class="links-grid">
+      <div class="link-card">
+        <h4>Museums &amp; Attractions</h4>
+        <a href="https://moe.nationalgeographic.org/en" target="_blank" rel="noopener">National Geographic Museum</a>
+        <a href="https://airandspace.si.edu" target="_blank" rel="noopener">Air and Space Museum</a>
+        <a href="https://www.nga.gov/visit" target="_blank" rel="noopener">National Gallery of Art</a>
+        <a href="https://americanart.si.edu/visit/renwick" target="_blank" rel="noopener">Renwick Gallery</a>
+        <a href="https://nationalzoo.si.edu" target="_blank" rel="noopener">National Zoo</a>
+        <a href="https://www.spymuseum.org" target="_blank" rel="noopener">International Spy Museum</a>
+      </div>
+      <div class="link-card">
+        <h4>Tickets &amp; Reservations</h4>
+        <a href="https://moe.nationalgeographic.org/en/visit/tickets" target="_blank" rel="noopener">Nat Geo Museum Tickets</a>
+        <a href="https://www.spymuseum.org/tickets" target="_blank" rel="noopener">Spy Museum Tickets</a>
+        <a href="https://capital.adventuresunbound.com/key-bridge-boathouse/" target="_blank" rel="noopener">Key Bridge Boathouse (Kayak)</a>
+      </div>
+      <div class="link-card">
+        <h4>Parks &amp; Outdoors</h4>
+        <a href="https://www.nps.gov/grfa/index.htm" target="_blank" rel="noopener">Great Falls Park (NPS)</a>
+        <a href="https://www.nps.gov/choh/planyourvisit/conditions.htm" target="_blank" rel="noopener">Billy Goat Trail Conditions</a>
+        <a href="https://www.georgetowndc.com" target="_blank" rel="noopener">Georgetown DC</a>
+      </div>
+      <div class="link-card">
+        <h4>Getting Around</h4>
+        <a href="https://www.wmata.com" target="_blank" rel="noopener">DC Metro (WMATA)</a>
+        <a href="https://www.wmata.com/fares/smartrip/" target="_blank" rel="noopener">SmarTrip Card</a>
+        <a href="https://www.capitalbikeshare.com" target="_blank" rel="noopener">Capital Bikeshare</a>
+      </div>
+      <div class="link-card">
+        <h4>Events &amp; City Info</h4>
+        <a href="https://washington.org" target="_blank" rel="noopener">Washington DC Tourism</a>
+        <a href="https://www.wharfdc.com/upcoming-events/" target="_blank" rel="noopener">The Wharf Events</a>
+        <a href="https://dc250.us/events" target="_blank" rel="noopener">DC250 Events</a>
+        <a href="https://www.visitalexandriava.com" target="_blank" rel="noopener">Visit Alexandria, VA</a>
+      </div>
+      <div class="link-card">
+        <h4>Weather &amp; Forecast</h4>
+        <a href="https://forecast.weather.gov/MapClick.php?lat=38.89&lon=-77.03" target="_blank" rel="noopener">NWS DC Forecast</a>
+        <a href="https://www.accuweather.com/en/us/washington/20006/june-weather/327659" target="_blank" rel="noopener">AccuWeather DC</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <p>Washington, D.C. · June 25–29, 2026</p>
+  <p style="margin-top: 6px;">Verify current museum hours at <a href="https://www.si.edu/visit" target="_blank" rel="noopener">si.edu/visit</a> before visiting.</p>
+  <p style="margin-top: 4px; opacity: 0.6; font-size: 0.8rem;">Weather forecast, event info, and museum hours current as of June 2026.</p>
+</div>
+
+<a href="#top" class="back-top" id="backTop">↑</a>
+
+<script>
+  var btn = document.getElementById('backTop');
+  window.addEventListener('scroll', function() {
+    btn.style.display = window.scrollY > 600 ? 'block' : 'none';
+  });
+</script>
+
+</body>
+</html>
