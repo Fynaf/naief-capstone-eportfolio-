@@ -449,3 +449,32 @@ body {
   .cred-grid { grid-template-columns: 1fr; }
   .nav-cards { grid-template-columns: 1fr; }
 }
+
+/* ── COMPETENCY PAGE ADDITIONS ──────────── */
+.comp-section { max-width: var(--read); }
+.comp-section > p { max-width: var(--read); }
+
+/* Competency definitions were set in multi-line italic, which is measurably
+   harder to read. The left rule and tint already mark them as quoted text. */
+.comp-def p { font-style: normal; }
+
+/* Evidence artifacts are links, not plain text. */
+.artifacts-list a {
+  color: var(--purple);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--purple-light);
+}
+.artifacts-list a:hover { border-bottom-color: var(--purple); }
+.artifacts-list a strong { color: inherit; }
+
+/* ── ACCESSIBILITY ──────────────────────── */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--purple-mid);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+.site-nav a:focus-visible,
+.site-nav button:focus-visible { outline-color: #fff; }
+

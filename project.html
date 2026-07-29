@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About the Project, Naief Alhowaiti Capstone ePortfolio</title>
+<title>About the Project · Naief Alhowaiti Capstone ePortfolio</title>
+<meta name="description" content="A quality improvement initiative to integrate genetic testing into routine nephrology care at London Health Sciences Centre. Baseline findings, PDSA Cycle 1, and what the cycle established.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,7 +15,7 @@
 <header class="site-nav">
   <div class="nav-inner">
     <a class="nav-logo" href="index.html">Naief Alhowaiti</a>
-    <button class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    <button class="nav-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
     <nav class="nav-links" id="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -28,49 +29,67 @@
 
 <div class="page-hero">
   <div class="page-hero-inner">
-    <div class="subtitle">QI Initiative · GN Clinic · LHSC · 2025–26</div>
+    <div class="subtitle">QI Initiative · General Nephrology · LHSC · 2025–26</div>
     <h1>About the Project</h1>
     <div class="hero-rule"></div>
   </div>
 </div>
 
-<div class="content-body">
+<main class="content-body">
   <div class="prose">
+
     <h2>Project Overview</h2>
-    <p>This ePortfolio documents my APPLHSCI 9099 Capstone Experience at Western University, completed during the 2025–26 academic year. My placement was embedded within the Glomerulonephritis (GN) Clinic at London Health Sciences Centre (LHSC), under the supervision of Dr. Dervla Connaughton (Field Mentor) and Dr. Marcy Saxe-Braithwaite (Academic Lead).</p>
+    <p>This ePortfolio documents my APPLHSCI 9099 Capstone Experience at Western University during the 2025–26 academic year. The initiative was carried out in the nephrology service at London Health Sciences Centre (LHSC), under Dr. Dervla Connaughton as Field Mentor and Dr. Marcy Saxe-Braithwaite as Academic Lead. The Glomerulonephritis (GN) Clinic, staffed by four consultants, served as the pilot site for phased expansion into the general nephrology clinics.</p>
+    <p>Genetic testing is underused in nephrology. Nephrologists at LHSC already hold the authority to order these tests directly, so the gap is not one of permission. In practice, most patients are referred instead to the Kidney Genetics Clinic, where the routine wait exceeds a year. At LHSC the median interval from CKD diagnosis to genetic assessment is 10.4 years.</p>
 
     <div class="callout">
       <div class="callout-label">The QI Question</div>
-      <p>How can the general nephrology clinics at London Health Sciences Centre, piloted in the Glomerulonephritis Clinic, improve physician readiness to integrate genetic testing into routine nephrology care, thereby increasing appropriate referral rates for patients with suspected hereditary kidney disease?</p>
+      <p>How can the general nephrology clinics at London Health Sciences Centre, piloted in the Glomerulonephritis Clinic, improve clinician readiness to identify eligible patients and initiate genetic testing directly, reserving Kidney Genetics Clinic referral for complex cases?</p>
     </div>
 
     <h2>Baseline Findings</h2>
-    <p>A pre-intervention survey administered to GN clinic staff in November–December 2025 revealed significant gaps in both capability and uptake.</p>
+    <p>A 20-question survey was distributed by email to the wider attending and fellow cohort at LHSC in November and December 2025. Eighteen clinicians responded: 12 attending nephrologists and 6 nephrology fellows.</p>
     <div class="stat-row">
       <span class="stat">n = 18 respondents</span>
-      <span class="stat">72% never ordered a genetic test</span>
-      <span class="stat">67% unfamiliar with ordering process</span>
-      <span class="stat">70% non-submission rate</span>
-      <span class="stat">9 min per referral form</span>
+      <span class="stat">72.2% had never ordered directly</span>
+      <span class="stat">66.7% unfamiliar with the ordering process</span>
+      <span class="stat">88.2% wanted ordering streamlined</span>
     </div>
-    <p>The barrier analysis identified two distinct categories of constraint operating simultaneously. The first was a <strong>capability gap</strong>: physicians lacked confidence in patient eligibility screening, pre-test counselling, and results interpretation. The second was an <strong>administrative barrier</strong>: the existing referral process required completion of two separate out-of-province forms, approximately nine minutes per patient, with no integration into standard clinic workflow and no way to delegate the task away from the ordering clinician.</p>
-    <p>This dual-barrier picture is consistent with international literature. Kushani J. Singh et al. (Australia) found that approximately 69% of clinicians surveyed did not understand the genetic testing ordering process. Australia is a setting Dr. Connaughton described as roughly five to ten years ahead of Canada in clinical genomics integration.</p>
+    <p>Respondents ranked selecting the appropriate test as the hardest step, and navigating the ordering process second. Half were unsure that direct ordering was even permitted. Around 44% reported limited confidence in consent discussions and in interpreting results. Time constraints and paperwork drew the fewest endorsements of any barrier offered, four of eighteen.</p>
+    <p>That last figure matters more than its size suggests, and I return to it below.</p>
+    <p>The pattern held against the international literature. Jayasinghe et al. (2021) surveyed Australian nephrologists and found 68.3% did not know which test to order; the local figure for process unfamiliarity was 66.7%. The barriers reported at LHSC were the barriers already described elsewhere.</p>
 
-    <h2>PDSA Cycle 1: Design and Findings</h2>
-    <p>The project was structured around a PDSA improvement framework. PDSA Cycle 1 (November 2025 – April 2026, completed) addressed the capability gap first. Education sessions were delivered to GN clinic staff covering eligibility criteria, pre-test counselling, consent documentation, and results handling. A comprehensive print package was developed for clinical use alongside the sessions.</p>
-    <p>Direct observation during the November–December 2025 education sessions confirmed the barrier pattern: physician engagement held well through clinical content but dropped markedly when the session reached the administrative requisition steps. PDSA Cycle 2, which was to address full administrative workflow redesign, was not run. The conditions it requires before it can begin are set out in the handover package.</p>
+    <h2>The Intervention</h2>
+    <p>The package targeted every barrier the baseline identified. It comprised two structured education sessions delivered in late November and early December 2025, and a clinical decision support toolkit: an eligibility and test-selection app, a workflow flow chart, a clinical checklist, a clinician consent discussion guide, and a patient pre-test brochure. A clinic tracker was built to capture screening and case-level data. An e-consult route, documented on the workflow and the checklist, lets a nephrologist put a question to the kidney genetics service without referring the patient.</p>
+    <p>Cycle 1 was planned as the first of sequential PDSA cycles toward screening at least 70% of GN clinic patients for eligibility by March 2026, with four outcome measures specified.</p>
 
-    <h2>Provincial Platform Context</h2>
+    <h2>PDSA Cycle 1: What Happened</h2>
+    <p>The completed workflow was walked through with a consultant in the GN clinic in March 2026. Eligibility screening with the app, pre-test counselling and consent, and DNA banking in the electronic record drew no objection and were judged workable inside a clinic visit. At the test requisition, the consultant said he would not be able to take the work on: too long, and not adaptable to clinic routine. Ordering through the Out-of-Province Panels pathway required Ministry of Health approval paperwork and out-of-province laboratory coordination, estimated at nine minutes per patient, sitting outside the clinic encounter and not delegable to anyone else.</p>
+    <p><strong>No direct genetic test order was placed during Cycle 1.</strong></p>
+    <p>None of the four planned outcome measures could be collected, because each depended on the package being taken up in clinic. At the midpoint review in April 2026 the cycle was reported as a feasibility cycle. No feasibility criterion had been set in advance; feasibility was assessed retrospectively against what the implementation attempt showed. All quantitative findings in this project are baseline. There is no post-intervention dataset.</p>
+
+    <h2>What Cycle 1 Established</h2>
+    <p>The knowledge and process uncertainties the package addressed are addressable. They are not the limiting factor, and further educational investment alone will not change the order rate while the pathway remains incomplete.</p>
+    <p>The barrier that stopped the pathway was the one least endorsed at baseline. A multiple-select survey item records how many clinicians report a problem, not what it costs the clinician who carries it, and it cannot capture a barrier respondents have not encountered. Every deliverable in the package removes ambiguity, clinical or logistical. Removing ambiguity cannot remove a task.</p>
+    <p>Cycle 2 and its measurement plan were not run. The conditions that must be true before it can begin are set out in the handover package, and the first of them is to characterise the current ordering pathway from real orders rather than from its description.</p>
+    <p>The capstone project closed on May 30, 2026.</p>
+
+    <h2>Provincial Context</h2>
     <div class="callout">
-      <div class="callout-label">System-Level Development · Launched June 21, 2026</div>
-      <p>The Ontario provincial genetic testing ordering platform launched on June 21, 2026, replacing the two-form Out-of-Province Panels process with a single provincial form. The ordering pathway has therefore changed. Whether that change removes the administrative barrier identified in this project is not yet known: paperwork still exists, and its time cost, clinician willingness to adopt it, and its fit with clinic workflow are all unmeasured. Characterising the new process is the first task of PDSA Cycle 2, not an assumption Cycle 2 can be built on. The launch supports the decision to defer Cycle 2 and makes the project's findings relevant beyond LHSC.</p>
+      <div class="callout-label">System-Level Development</div>
+      <p>Ontario has since introduced a provincial genetic testing ordering platform. On the out-of-province send-out path, it removes the Ministry of Health application step, which was the longest single piece of the paperwork. It does not change the test requisition, which carries clinical data, or the LHSC Molecular Genetics requisition, form assembly, faxing, routing and tracking. Requisition friction remains.</p>
+      <p>What the new route costs in clinic time, whether it can be delegated, and whether it fits the clinic day are all unmeasured. Its description has never been checked against a real order. Characterising it is the first task of Cycle 2, not an assumption Cycle 2 can be built on.</p>
     </div>
+
+    <h2>Reference</h2>
+    <p style="font-size:0.92rem;color:var(--text-subtle);">Jayasinghe, K., Quinlan, C., Stark, Z., Patel, C., Mallett, A. J., Kerr, P. G., Turbitt, E., &amp; Savige, J. (2021). Attitudes and practices of Australian nephrologists toward implementation of clinical genomics. <em>Kidney International Reports, 6</em>(2), 272–283.</p>
+
   </div>
-</div>
+</main>
 
 <footer class="site-footer">
   <p>Naief Alhowaiti &nbsp;·&nbsp; APPLHSCI 9099 Capstone Experience &nbsp;·&nbsp; Western University &nbsp;·&nbsp; 2025–26</p>
-  <p style="margin-top:6px;opacity:0.55;">London Health Sciences Centre · General Nephrology Clinics</p>
+  <p style="margin-top:6px;">London Health Sciences Centre · General Nephrology Clinics</p>
 </footer>
 
 </body>
